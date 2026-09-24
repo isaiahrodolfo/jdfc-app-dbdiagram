@@ -32,12 +32,6 @@
         "y": 487.06723056029927
       },
       {
-        "name": "lessons_tags",
-        "schemaName": "public",
-        "x": 12,
-        "y": 822.9566261478498
-      },
-      {
         "name": "devotion_lessons",
         "schemaName": "public",
         "x": 12,
@@ -177,30 +171,6 @@
         "secondSchemaName": "public",
         "secondRelation": "1",
         "checkPoints": []
-      },
-      {
-        "firstFieldNames": [
-          "id"
-        ],
-        "firstTableName": "lessons",
-        "firstSchemaName": "public",
-        "firstRelation": "1",
-        "secondFieldNames": [
-          "lesson_id"
-        ],
-        "secondTableName": "lessons_tags",
-        "secondSchemaName": "public",
-        "secondRelation": "0..*",
-        "checkPoints": [
-          {
-            "x": 329.28409600378734,
-            "y": 448.12351091680813
-          },
-          {
-            "x": 329.28409600378734,
-            "y": 811.205868062039
-          }
-        ]
       },
       {
         "firstFieldNames": [

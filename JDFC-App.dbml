@@ -29,6 +29,7 @@ Ref users_lessons: users_lessons.lesson_id ?> lessons.id // many-to-one
 Table lessons {
   id integer [primary key]
   title text
+  tags text[]
 }
 
 Table church_lessons {
@@ -68,12 +69,6 @@ Table lessons_events {
   id integer [primary key]
   lesson_id integer [not null]
   event_id integer [not null]
-}
-
-Table lessons_tags {
-  id integer [primary key]
-  lesson_id integer [not null]
-  tags text[] [not null]
 }
 
 Table lessons_events_speakers {
@@ -163,15 +158,17 @@ Table announcements {
 }
 
 Records tracks(id, name) {
-  1, 'Consolidation'
-  2, 'Life Class'
-  3, 'Destiny Training'
+  1, 'Sunday Service'
+  2, 'Prayer Service'
+  3, 'Consolidation'
+  4, 'Life Class'
+  5, 'Destiny Training'
 }
 
 Records series(id, name, heading, track_id) {
-  1, 'Consolidation', null, 1
-  2, 'Learning From Our Mistakes', 'Week 1', 2
-  11, 'DT Example Title', 'Module 1', 3
+  1, 'Consolidation', null, 3
+  2, 'Learning From Our Mistakes', 'Week 1', 4
+  11, 'DT Example Title', 'Module 1', 5
 }
 
 Records life_group_roles(id, name) {
@@ -200,8 +197,6 @@ Ref: "lessons"."id" -? "lessons_completion"."lesson_id"
 Ref: "lessons"."id" <? "church_lessons"."lesson_id"
 
 Ref: "series"."id" <? "church_lessons"."module_id"
-
-Ref: "lessons"."id" <? "lessons_tags"."lesson_id"
 
 Ref: "lessons"."id" <? "devotion_lessons"."lesson_id"
 
