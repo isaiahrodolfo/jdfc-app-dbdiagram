@@ -92,6 +92,12 @@ Table lessons_dates_completion {
   is_completed boolean [not null]
 }
 
+Table lessons_dates_link {
+  id integer [primary key]
+  lesson_date_id integer [not null, unique]
+  is_live boolean [not null]
+}
+
 Table life_group_events {
   id integer [primary key]
   life_group_id integer [not null]
@@ -194,7 +200,7 @@ Ref: "users"."id" <? "life_group_members"."user_id"
 
 Ref: "users"."id" <? "life_group_events_members"."user_id"
 
-Ref: "life_group"."id" <? "life_group_members"."life_group_id"
+Ref: "life_groups"."id" <? "life_group_members"."life_group_id"
 
 Ref: "life_group_roles"."id" <? "life_group_members"."life_group_role_id"
 
@@ -204,6 +210,8 @@ Ref: "event_availabilities"."id" <? "life_group_events_members"."event_availabil
 
 Ref: "events"."id" <? "life_group_events"."event_id"
 
-Ref: "life_group"."id" <? "life_group_events"."life_group_id"
+Ref: "life_groups"."id" <? "life_group_events"."life_group_id"
 
 Ref: "users"."id" -? "profiles"."user_id"
+
+Ref: "lessons_dates"."id" -? "lessons_dates_link"."lesson_date_id"
