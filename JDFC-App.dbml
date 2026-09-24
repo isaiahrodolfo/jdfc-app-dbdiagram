@@ -100,6 +100,7 @@ Table lessons_events_link {
 
 Table life_group_events {
   id integer [primary key]
+  creator_id integer [not null]
   life_group_id integer [not null]
   event_id integer [not null]
 }
@@ -139,7 +140,6 @@ Table life_group_events_members {
 
 Table events {
   id integer [primary key]
-  creator_id integer [not null]
   datetime datetime [not null]
   location text [not null]
   repeat_every_days integer [not null]
@@ -202,7 +202,7 @@ Ref: "lessons"."id" <? "lessons_tags"."lesson_id"
 
 Ref: "lessons"."id" <? "devotion_lessons"."lesson_id"
 
-Ref: "users"."id" <? "events"."creator_id"
+Ref: "users"."id" <? "life_group_events"."creator_id"
 
 Ref: "users"."id" <? "life_group_members"."user_id"
 

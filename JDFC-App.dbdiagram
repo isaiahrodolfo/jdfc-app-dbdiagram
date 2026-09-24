@@ -88,8 +88,8 @@
       {
         "name": "events",
         "schemaName": "public",
-        "x": 1042.7268486754401,
-        "y": -305.6314184130909
+        "x": 1038.9587103393196,
+        "y": -39.86434604748834
       },
       {
         "name": "profiles",
@@ -106,8 +106,8 @@
       {
         "name": "announcements",
         "schemaName": "public",
-        "x": 1042.7268486754401,
-        "y": -489.33898821948617
+        "x": 1054.6949185714934,
+        "y": -405.412544314559
       },
       {
         "name": "lessons_events",
@@ -395,30 +395,6 @@
         "firstFieldNames": [
           "id"
         ],
-        "firstTableName": "users",
-        "firstSchemaName": "public",
-        "firstRelation": "1",
-        "secondFieldNames": [
-          "creator_id"
-        ],
-        "secondTableName": "events",
-        "secondSchemaName": "public",
-        "secondRelation": "0..*",
-        "checkPoints": [
-          {
-            "x": 940.3627078412196,
-            "y": 271.4384686062721
-          },
-          {
-            "x": 940.3627078412196,
-            "y": -225.6314184130909
-          }
-        ]
-      },
-      {
-        "firstFieldNames": [
-          "id"
-        ],
         "firstTableName": "events",
         "firstSchemaName": "public",
         "firstRelation": "1",
@@ -588,6 +564,30 @@
         "secondSchemaName": "public",
         "secondRelation": "0..*",
         "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "users",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "creator_id"
+        ],
+        "secondTableName": "life_group_events",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": [
+          {
+            "x": 941.4333341936081,
+            "y": 271.4384686062722
+          },
+          {
+            "x": 941.4333341936081,
+            "y": -152.42375096739391
+          }
+        ]
       }
     ]
   },
