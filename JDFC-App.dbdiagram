@@ -120,6 +120,12 @@
         "schemaName": "public",
         "x": 1042.7268486754401,
         "y": -305.6314184130909
+      },
+      {
+        "name": "profiles",
+        "schemaName": "public",
+        "x": -579.3695480115035,
+        "y": 1644.0138519977934
       }
     ],
     "tableGroupCollapseStates": [],
@@ -542,6 +548,21 @@
         "secondTableName": "life_group_events",
         "secondSchemaName": "public",
         "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "users",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "user_id"
+        ],
+        "secondTableName": "profiles",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
         "checkPoints": []
       }
     ]

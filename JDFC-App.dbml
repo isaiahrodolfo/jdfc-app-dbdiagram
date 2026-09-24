@@ -3,7 +3,17 @@
 
 Table users {
   id integer [primary key]
+  email email [not null]
+  phone phone
+}
+
+Table profiles {
+  user_id integer [not null]
   full_name text
+  birthday date
+  avatar_url text
+  facebook_url text
+  instagram_url text
 }
 
 Table users_lessons {
@@ -195,3 +205,5 @@ Ref: "event_availabilities"."id" <? "life_group_events_members"."event_availabil
 Ref: "events"."id" <? "life_group_events"."event_id"
 
 Ref: "life_group"."id" <? "life_group_events"."life_group_id"
+
+Ref: "users"."id" - "profiles"."user_id"
