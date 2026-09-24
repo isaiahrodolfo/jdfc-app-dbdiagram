@@ -78,6 +78,42 @@
         "schemaName": "public",
         "x": -12.9697265625,
         "y": 358.33555951678045
+      },
+      {
+        "name": "life_group_events",
+        "schemaName": "public",
+        "x": 1185.428620268613,
+        "y": 460.63206655516746
+      },
+      {
+        "name": "life_group",
+        "schemaName": "public",
+        "x": 1525.3075265186133,
+        "y": 460.63206655516746
+      },
+      {
+        "name": "life_group_members",
+        "schemaName": "public",
+        "x": 1770.3627022998633,
+        "y": 460.63206655516746
+      },
+      {
+        "name": "life_group_roles",
+        "schemaName": "public",
+        "x": 2090.9066476123626,
+        "y": 460.63206655516746
+      },
+      {
+        "name": "life_group_events_members",
+        "schemaName": "public",
+        "x": 1185.428620268613,
+        "y": 734.6320665551673
+      },
+      {
+        "name": "event_availabilities",
+        "schemaName": "public",
+        "x": 1525.3075265186133,
+        "y": 606.6320665551672
       }
     ],
     "tableGroupCollapseStates": [],
@@ -295,6 +331,111 @@
           "module_id"
         ],
         "secondTableName": "church_lessons",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "users",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "creator"
+        ],
+        "secondTableName": "life_group_events",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "users",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "user_id"
+        ],
+        "secondTableName": "life_group_members",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "users",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "user_id"
+        ],
+        "secondTableName": "life_group_events_members",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "life_group",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "life_group_id"
+        ],
+        "secondTableName": "life_group_members",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "life_group_roles",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "life_group_role_id"
+        ],
+        "secondTableName": "life_group_members",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "life_group_events",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "life_group_event_id"
+        ],
+        "secondTableName": "life_group_events_members",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "event_availabilities",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "event_availability_id"
+        ],
+        "secondTableName": "life_group_events_members",
         "secondSchemaName": "public",
         "secondRelation": "0..*",
         "checkPoints": []

@@ -82,10 +82,63 @@ Table lessons_dates_completion {
   is_completed boolean [not null]
 }
 
+Table life_group_events {
+  id integer [primary key]
+  creator integer [not null]
+  datetime datetime [not null]
+  location text [not null]
+  repeat_every_days integer [not null]
+  note text
+}
+
+Table life_group {
+  id integer [primary key]
+  name text
+}
+
+Table life_group_members {
+  id integer [primary key]
+  life_group_id integer [not null]
+  user_id integer [not null]
+  life_group_role_id integer [not null]
+  is_admin boolean [not null, note: 'Can edit events']
+
+  indexes {
+    (user_id, life_group_id) [unique]
+  }
+}
+
+Table life_group_roles {
+  id integer [primary key]
+  name text [not null]
+}
+
+Table life_group_events_members {
+  id integer [primary key]
+  life_group_event_id integer [not null]
+  user_id integer [not null]
+  event_availability_id integer [not null]
+
+  indexes {
+    (user_id, life_group_event_id) [unique]
+  }
+}
+
+Table event_availabilities {
+  id integer [primary key]
+  name text [not null]
+}
+
 Records tracks(id, name) {
   0, 'Consolidation'
   1, 'Life Class'
   2, 'Destiny Training'
+}
+
+Records event_availabilities(id, name) {
+  0, 'Going'
+  1, 'Maybe'
+  2, 'Not Going'
 }
 
 Ref: "tracks"."id" < "series"."track_id"
@@ -109,3 +162,17 @@ Ref: "series"."id" <? "church_lessons"."module_id"
 Ref: "lessons"."id" <? "lessons_tags"."lesson_id"
 
 Ref: "lessons"."id" <? "devotion_lessons"."lesson_id"
+
+Ref: "users"."id" <? "life_group_events"."creator"
+
+Ref: "users"."id" <? "life_group_members"."user_id"
+
+Ref: "users"."id" <? "life_group_events_members"."user_id"
+
+Ref: "life_group"."id" <? "life_group_members"."life_group_id"
+
+Ref: "life_group_roles"."id" <? "life_group_members"."life_group_role_id"
+
+Ref: "life_group_events"."id" <? "life_group_events_members"."life_group_event_id"
+
+Ref: "event_availabilities"."id" <? "life_group_events_members"."event_availability_id"
