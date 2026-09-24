@@ -65,7 +65,7 @@ Table series {
 Table lessons_dates {
   id integer [primary key]
   lesson_id integer [not null]
-  date datetime [not null]
+  datetime datetime [not null]
 }
 
 Table lessons_tags {
@@ -143,12 +143,18 @@ Table events {
   datetime datetime [not null]
   location text [not null]
   repeat_every_days integer [not null]
+  announcement_end datetime
   note text
 }
 
 Table event_availabilities {
   id integer [primary key]
   name text [not null]
+}
+
+Table announcements {
+  id integer [primary key]
+  datetime_end datetime
 }
 
 Records tracks(id, name) {

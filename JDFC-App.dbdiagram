@@ -86,12 +86,6 @@
         "y": -232.42375096739391
       },
       {
-        "name": "life_group",
-        "schemaName": "public",
-        "x": 1528.979649908645,
-        "y": 740.2496432180503
-      },
-      {
         "name": "life_group_members",
         "schemaName": "public",
         "x": 1071.535669385339,
@@ -124,20 +118,26 @@
       {
         "name": "profiles",
         "schemaName": "public",
-        "x": -579.3695480115035,
-        "y": 1644.0138519977934
-      },
-      {
-        "name": "lessons_dates_link",
-        "schemaName": "public",
-        "x": -579.3695480115035,
-        "y": 1918.0138519977934
+        "x": 667.6465476634756,
+        "y": 416.7561306102675
       },
       {
         "name": "life_groups",
         "schemaName": "public",
-        "x": -263.8693526990035,
-        "y": 1918.0138519977934
+        "x": 1488.8178196456295,
+        "y": 738.1411241350877
+      },
+      {
+        "name": "lessons_dates_link",
+        "schemaName": "public",
+        "x": -317.77405734431886,
+        "y": 1659.0007169808162
+      },
+      {
+        "name": "announcements",
+        "schemaName": "public",
+        "x": 1042.7268486754401,
+        "y": -489.33898821948617
       }
     ],
     "tableGroupCollapseStates": [],
@@ -156,7 +156,12 @@
         "secondTableName": "users",
         "secondSchemaName": "public",
         "secondRelation": "1",
-        "checkPoints": []
+        "checkPoints": [
+          {
+            "x": 556.496690532763,
+            "y": 270
+          }
+        ]
       },
       {
         "firstFieldNames": [
@@ -275,11 +280,7 @@
         "secondRelation": "0..1",
         "checkPoints": [
           {
-            "x": -20.222927824559463,
-            "y": 968.8742613710049
-          },
-          {
-            "x": -20.222927824559463,
+            "x": -10,
             "y": 1546.0138519977934
           }
         ]
@@ -438,26 +439,6 @@
         "firstFieldNames": [
           "id"
         ],
-        "firstTableName": "life_group",
-        "firstSchemaName": "public",
-        "firstRelation": "1",
-        "secondFieldNames": [
-          "life_group_id"
-        ],
-        "secondTableName": "life_group_members",
-        "secondSchemaName": "public",
-        "secondRelation": "0..*",
-        "checkPoints": [
-          {
-            "x": 1456.2542726021275,
-            "y": 788.2496432180503
-          }
-        ]
-      },
-      {
-        "firstFieldNames": [
-          "id"
-        ],
         "firstTableName": "life_group_roles",
         "firstSchemaName": "public",
         "firstRelation": "1",
@@ -551,21 +532,6 @@
         "firstFieldNames": [
           "id"
         ],
-        "firstTableName": "life_group",
-        "firstSchemaName": "public",
-        "firstRelation": "1",
-        "secondFieldNames": [
-          "life_group_id"
-        ],
-        "secondTableName": "life_group_events",
-        "secondSchemaName": "public",
-        "secondRelation": "0..*",
-        "checkPoints": []
-      },
-      {
-        "firstFieldNames": [
-          "id"
-        ],
         "firstTableName": "users",
         "firstSchemaName": "public",
         "firstRelation": "1",
@@ -620,7 +586,12 @@
         "secondTableName": "lessons_dates_link",
         "secondSchemaName": "public",
         "secondRelation": "0..1",
-        "checkPoints": []
+        "checkPoints": [
+          {
+            "x": -10,
+            "y": 1739.0007169808162
+          }
+        ]
       }
     ]
   },
