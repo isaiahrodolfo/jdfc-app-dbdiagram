@@ -45,6 +45,8 @@ Table church_lessons {
 Table devotion_lessons {
   id integer [primary key]
   odb_link text [not null]
+  title text [not null]
+  date date [not null]
   lesson_id integer [not null]
 }
 

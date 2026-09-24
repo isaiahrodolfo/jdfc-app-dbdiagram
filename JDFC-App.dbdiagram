@@ -34,14 +34,14 @@
       {
         "name": "lessons_tags",
         "schemaName": "public",
-        "x": 10,
-        "y": 741.6528836149517
+        "x": 12,
+        "y": 822.9566261478498
       },
       {
         "name": "devotion_lessons",
         "schemaName": "public",
         "x": 12,
-        "y": 562.7771245025627
+        "y": 567.9969996128993
       },
       {
         "name": "series",
@@ -113,31 +113,31 @@
         "name": "lessons_events",
         "schemaName": "public",
         "x": 12,
-        "y": 932.9903092870378
+        "y": 1013.4198180292595
       },
       {
         "name": "lessons_events_speakers",
         "schemaName": "public",
         "x": -528.9187605683414,
-        "y": 1024.3216493678124
+        "y": 1104.7511581100334
       },
       {
         "name": "lessons_events_slides",
         "schemaName": "public",
         "x": -528.9187605683414,
-        "y": 1377.9044088233827
+        "y": 1458.3339175656038
       },
       {
         "name": "lessons_events_completion",
         "schemaName": "public",
         "x": -542.9687605683415,
-        "y": 1554.0434218363057
+        "y": 1634.4729305785268
       },
       {
         "name": "lessons_events_link",
         "schemaName": "public",
         "x": -542.9687605683415,
-        "y": 1204.2787495124003
+        "y": 1284.7082582546213
       }
     ],
     "tableGroupCollapseStates": [],
