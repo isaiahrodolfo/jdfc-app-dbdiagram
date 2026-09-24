@@ -44,15 +44,10 @@ Table church_lessons {
 
 Table devotion_lessons {
   id integer [primary key]
-  odb_link text [not null]
+  odb_link text [not null, unique]
   title text [not null]
-  date date [not null]
+  date date [not null, unique]
   lesson_id integer [not null]
-
-  indexes {
-    (odb_link) [unique]
-    (date) [unique]
-  }
 }
 
 // Ex. sermonType, DT, LC
