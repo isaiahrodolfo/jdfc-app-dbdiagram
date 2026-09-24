@@ -1,0 +1,111 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table users {
+  id integer [primary key]
+  full_name text
+}
+
+Table users_lessons {
+  id integer [primary key]
+  notes text [note: 'User\'s notes for the lesson']
+  user_id integer [not null]
+  lesson_id integer [not null]
+}
+
+Ref users_lessons: users_lessons.user_id ?> users.id // many-to-one
+Ref users_lessons: users_lessons.lesson_id ?> lessons.id // many-to-one
+
+Table lessons {
+  id integer [primary key]
+  title text
+}
+
+Table church_lessons {
+  id integer [primary key]
+  module_id integer [not null]
+  lesson_number integer [not null]
+  lesson_id integer [not null]
+
+  indexes {
+    (module_id, lesson_number) [unique]
+  }
+}
+
+Table devotion_lessons {
+  id integer [primary key]
+  odb_link text [not null]
+  lesson_id integer [not null]
+}
+
+// Ex. sermonType, DT, LC
+Table tracks {
+  id integer [primary key, note: 'Track number, 1-indexed']
+  name text
+}
+
+// Ex. sermon series, DT module, LC week
+Table series {
+  id integer [primary key]
+  name text
+  heading text [note: 'Week # or Module #']
+  track_id integer [not null]
+}
+
+Table lessons_dates {
+  id integer [primary key]
+  lesson_id integer [not null]
+  date datetime [not null]
+}
+
+Table lessons_tags {
+  id integer [primary key]
+  lesson_id integer [not null]
+  tags text[] [not null]
+}
+
+Table lessons_dates_speakers {
+  id integer [primary key]
+  lesson_date_id integer [not null]
+  speaker_id integer [not null]
+}
+
+Table lessons_dates_slides {
+  id integer [primary key]
+  lesson_date_id integer [not null]
+  slides_link text [not null]
+}
+
+Table lessons_dates_completion {
+  id integer [primary key]
+  lesson_date_id integer [not null]
+  is_completed boolean [not null]
+}
+
+Records tracks(id, name) {
+  0, 'Consolidation'
+  1, 'Life Class'
+  2, 'Destiny Training'
+}
+
+Ref: "tracks"."id" < "series"."track_id"
+
+Ref: "lessons"."id" < "lessons_dates"."lesson_id"
+
+Ref: "lessons_dates"."id" <? "lessons_dates_speakers"."lesson_date_id"
+
+
+
+Ref: "users"."id" <? "lessons_dates_speakers"."speaker_id"
+
+Ref: "lessons_dates"."id" <? "lessons_dates_slides"."lesson_date_id"
+
+Ref: "lessons_dates"."id" -? "lessons_dates_completion"."lesson_date_id"
+
+Ref: "lessons"."id" <? "church_lessons"."lesson_id"
+
+Ref: "series"."id" <? "church_lessons"."module_id"
+
+Ref: "lessons"."id" <? "lessons_tags"."lesson_id"
+
+Ref: "lessons"."id" <? "devotion_lessons"."lesson_id"

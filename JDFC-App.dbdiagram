@@ -1,0 +1,305 @@
+{
+  "version": "3.0.0",
+  "darkMode": true,
+  "gridEnabling": false,
+  "currentViewName": null,
+  "defaultView": {
+    "detailLevel": "All",
+    "relationshipMode": "All",
+    "tablePositions": [
+      {
+        "name": "users",
+        "schemaName": "public",
+        "x": 651.1574194853988,
+        "y": 222
+      },
+      {
+        "name": "users_lessons",
+        "schemaName": "public",
+        "x": 12,
+        "y": 158
+      },
+      {
+        "name": "lessons",
+        "schemaName": "public",
+        "x": 431.8391157881405,
+        "y": 400.12351091680813
+      },
+      {
+        "name": "tracks",
+        "schemaName": "public",
+        "x": -579.3695480115035,
+        "y": 487.06723056029927
+      },
+      {
+        "name": "lessons_dates",
+        "schemaName": "public",
+        "x": 10,
+        "y": 920.8742613710049
+      },
+      {
+        "name": "lessons_dates_speakers",
+        "schemaName": "public",
+        "x": -317.9990573443188,
+        "y": 1079.0705447011592
+      },
+      {
+        "name": "lessons_dates_slides",
+        "schemaName": "public",
+        "x": -317.9990573443188,
+        "y": 1273.1610644954094
+      },
+      {
+        "name": "lessons_dates_completion",
+        "schemaName": "public",
+        "x": -317.9990573443188,
+        "y": 1466.0138519977934
+      },
+      {
+        "name": "lessons_tags",
+        "schemaName": "public",
+        "x": 10,
+        "y": 741.6528836149517
+      },
+      {
+        "name": "devotion_lessons",
+        "schemaName": "public",
+        "x": 12,
+        "y": 562.7771245025627
+      },
+      {
+        "name": "series",
+        "schemaName": "public",
+        "x": -326.69705044104677,
+        "y": 390.72946946171055
+      },
+      {
+        "name": "church_lessons",
+        "schemaName": "public",
+        "x": -12.9697265625,
+        "y": 358.33555951678045
+      }
+    ],
+    "tableGroupCollapseStates": [],
+    "stickyNoteLayouts": [],
+    "referencePaths": [
+      {
+        "firstFieldNames": [
+          "user_id"
+        ],
+        "firstTableName": "users_lessons",
+        "firstSchemaName": "public",
+        "firstRelation": "0..*",
+        "secondFieldNames": [
+          "id"
+        ],
+        "secondTableName": "users",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "lesson_id"
+        ],
+        "firstTableName": "users_lessons",
+        "firstSchemaName": "public",
+        "firstRelation": "0..*",
+        "secondFieldNames": [
+          "id"
+        ],
+        "secondTableName": "lessons",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lesson_id"
+        ],
+        "secondTableName": "lessons_dates",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons_dates",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lesson_date_id"
+        ],
+        "secondTableName": "lessons_dates_speakers",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "users",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "speaker_id"
+        ],
+        "secondTableName": "lessons_dates_speakers",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": [
+          {
+            "x": 609.7645961871076,
+            "y": 270
+          },
+          {
+            "x": 609.7645961871076,
+            "y": 1191.0705447011592
+          }
+        ]
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons_dates",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lesson_date_id"
+        ],
+        "secondTableName": "lessons_dates_slides",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons_dates",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lesson_date_id"
+        ],
+        "secondTableName": "lessons_dates_completion",
+        "secondSchemaName": "public",
+        "secondRelation": "0..1",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lesson_id"
+        ],
+        "secondTableName": "lessons_tags",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": [
+          {
+            "x": 329.28409600378734,
+            "y": 448.12351091680813
+          },
+          {
+            "x": 329.28409600378734,
+            "y": 811.205868062039
+          }
+        ]
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lesson_id"
+        ],
+        "secondTableName": "devotion_lessons",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": [
+          {
+            "x": 329.32247373964134,
+            "y": 448.12351091680813
+          },
+          {
+            "x": 329.32247373964134,
+            "y": 674.7771245025627
+          }
+        ]
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "tracks",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "track_id"
+        ],
+        "secondTableName": "series",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lesson_id"
+        ],
+        "secondTableName": "church_lessons",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": [
+          {
+            "x": 329.2375606931281,
+            "y": 448.12351091680813
+          },
+          {
+            "x": 329.2375606931281,
+            "y": 502.33555951678045
+          }
+        ]
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "series",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "module_id"
+        ],
+        "secondTableName": "church_lessons",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      }
+    ]
+  },
+  "views": {}
+}
