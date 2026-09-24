@@ -562,7 +562,7 @@
         ],
         "secondTableName": "profiles",
         "secondSchemaName": "public",
-        "secondRelation": "1",
+        "secondRelation": "0..1",
         "checkPoints": []
       }
     ]
