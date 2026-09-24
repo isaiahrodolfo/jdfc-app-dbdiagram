@@ -128,16 +128,16 @@
         "y": 1458.3339175656038
       },
       {
-        "name": "lessons_events_completion",
-        "schemaName": "public",
-        "x": -542.9687605683415,
-        "y": 1634.4729305785268
-      },
-      {
         "name": "lessons_events_link",
         "schemaName": "public",
         "x": -542.9687605683415,
         "y": 1284.7082582546213
+      },
+      {
+        "name": "lessons_completion",
+        "schemaName": "public",
+        "x": -2.0500000000000114,
+        "y": 1611.8553714266666
       }
     ],
     "tableGroupCollapseStates": [],
@@ -470,21 +470,6 @@
         "firstFieldNames": [
           "id"
         ],
-        "firstTableName": "lessons_events",
-        "firstSchemaName": "public",
-        "firstRelation": "1",
-        "secondFieldNames": [
-          "lesson_date_id"
-        ],
-        "secondTableName": "lessons_events_speakers",
-        "secondSchemaName": "public",
-        "secondRelation": "0..*",
-        "checkPoints": []
-      },
-      {
-        "firstFieldNames": [
-          "id"
-        ],
         "firstTableName": "users",
         "firstSchemaName": "public",
         "firstRelation": "1",
@@ -504,51 +489,6 @@
             "y": 1136.3216493678124
           }
         ]
-      },
-      {
-        "firstFieldNames": [
-          "id"
-        ],
-        "firstTableName": "lessons_events",
-        "firstSchemaName": "public",
-        "firstRelation": "1",
-        "secondFieldNames": [
-          "lesson_date_id"
-        ],
-        "secondTableName": "lessons_events_slides",
-        "secondSchemaName": "public",
-        "secondRelation": "0..*",
-        "checkPoints": []
-      },
-      {
-        "firstFieldNames": [
-          "id"
-        ],
-        "firstTableName": "lessons_events",
-        "firstSchemaName": "public",
-        "firstRelation": "1",
-        "secondFieldNames": [
-          "lesson_date_id"
-        ],
-        "secondTableName": "lessons_events_completion",
-        "secondSchemaName": "public",
-        "secondRelation": "0..1",
-        "checkPoints": []
-      },
-      {
-        "firstFieldNames": [
-          "id"
-        ],
-        "firstTableName": "lessons_events",
-        "firstSchemaName": "public",
-        "firstRelation": "1",
-        "secondFieldNames": [
-          "lesson_date_id"
-        ],
-        "secondTableName": "lessons_events_link",
-        "secondSchemaName": "public",
-        "secondRelation": "0..1",
-        "checkPoints": []
       },
       {
         "firstFieldNames": [
@@ -588,6 +528,66 @@
             "y": -152.42375096739391
           }
         ]
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons_events",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lessons_events_id"
+        ],
+        "secondTableName": "lessons_events_speakers",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons_events",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lessons_events_id"
+        ],
+        "secondTableName": "lessons_events_slides",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons_events",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lessons_events_id"
+        ],
+        "secondTableName": "lessons_events_link",
+        "secondSchemaName": "public",
+        "secondRelation": "0..1",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lesson_id"
+        ],
+        "secondTableName": "lessons_completion",
+        "secondSchemaName": "public",
+        "secondRelation": "0..1",
+        "checkPoints": []
       }
     ]
   },

@@ -78,25 +78,25 @@ Table lessons_tags {
 
 Table lessons_events_speakers {
   id integer [primary key]
-  lesson_date_id integer [not null]
+  lessons_events_id integer [not null]
   speaker_id integer [not null]
 }
 
 Table lessons_events_slides {
   id integer [primary key]
-  lesson_date_id integer [not null]
+  lessons_events_id integer [not null]
   slides_link text [not null]
 }
 
-Table lessons_events_completion {
+Table lessons_completion {
   id integer [primary key]
-  lesson_date_id integer [not null, unique]
+  lesson_id integer [not null, unique]
   is_completed boolean [not null]
 }
 
 Table lessons_events_link {
   id integer [primary key]
-  lesson_date_id integer [not null, unique]
+  lessons_events_id integer [not null, unique]
   is_live boolean [not null]
 }
 
@@ -189,13 +189,13 @@ Ref: "tracks"."id" < "series"."track_id"
 
 Ref: "lessons"."id" <? "lessons_events"."lesson_id"
 
-Ref: "lessons_events"."id" <? "lessons_events_speakers"."lesson_date_id"
+Ref: "lessons_events"."id" <? "lessons_events_speakers"."lessons_events_id"
 
 Ref: "users"."id" <? "lessons_events_speakers"."speaker_id"
 
-Ref: "lessons_events"."id" <? "lessons_events_slides"."lesson_date_id"
+Ref: "lessons_events"."id" <? "lessons_events_slides"."lessons_events_id"
 
-Ref: "lessons_events"."id" -? "lessons_events_completion"."lesson_date_id"
+Ref: "lessons"."id" -? "lessons_completion"."lesson_id"
 
 Ref: "lessons"."id" <? "church_lessons"."lesson_id"
 
@@ -225,6 +225,6 @@ Ref: "life_groups"."id" <? "life_group_events"."life_group_id"
 
 Ref: "users"."id" -? "profiles"."user_id"
 
-Ref: "lessons_events"."id" -? "lessons_events_link"."lesson_date_id"
+Ref: "lessons_events"."id" -? "lessons_events_link"."lessons_events_id"
 
 Ref: "events"."id" <? "lessons_events"."event_id"
