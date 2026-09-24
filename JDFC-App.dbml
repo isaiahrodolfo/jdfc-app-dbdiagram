@@ -62,10 +62,10 @@ Table series {
   track_id integer [not null]
 }
 
-Table lessons_dates {
+Table lessons_events {
   id integer [primary key]
   lesson_id integer [not null]
-  datetime datetime [not null]
+  event_id integer [not null]
 }
 
 Table lessons_tags {
@@ -74,25 +74,25 @@ Table lessons_tags {
   tags text[] [not null]
 }
 
-Table lessons_dates_speakers {
+Table lessons_events_speakers {
   id integer [primary key]
   lesson_date_id integer [not null]
   speaker_id integer [not null]
 }
 
-Table lessons_dates_slides {
+Table lessons_events_slides {
   id integer [primary key]
   lesson_date_id integer [not null]
   slides_link text [not null]
 }
 
-Table lessons_dates_completion {
+Table lessons_events_completion {
   id integer [primary key]
   lesson_date_id integer [not null, unique]
   is_completed boolean [not null]
 }
 
-Table lessons_dates_link {
+Table lessons_events_link {
   id integer [primary key]
   lesson_date_id integer [not null, unique]
   is_live boolean [not null]
@@ -154,6 +154,8 @@ Table event_availabilities {
 
 Table announcements {
   id integer [primary key]
+  name text
+  category text
   datetime_end datetime
 }
 
@@ -182,15 +184,15 @@ Records event_availabilities(id, name) {
 
 Ref: "tracks"."id" < "series"."track_id"
 
-Ref: "lessons"."id" < "lessons_dates"."lesson_id"
+Ref: "lessons"."id" <? "lessons_events"."lesson_id"
 
-Ref: "lessons_dates"."id" <? "lessons_dates_speakers"."lesson_date_id"
+Ref: "lessons_events"."id" <? "lessons_events_speakers"."lesson_date_id"
 
-Ref: "users"."id" <? "lessons_dates_speakers"."speaker_id"
+Ref: "users"."id" <? "lessons_events_speakers"."speaker_id"
 
-Ref: "lessons_dates"."id" <? "lessons_dates_slides"."lesson_date_id"
+Ref: "lessons_events"."id" <? "lessons_events_slides"."lesson_date_id"
 
-Ref: "lessons_dates"."id" -? "lessons_dates_completion"."lesson_date_id"
+Ref: "lessons_events"."id" -? "lessons_events_completion"."lesson_date_id"
 
 Ref: "lessons"."id" <? "church_lessons"."lesson_id"
 
@@ -220,4 +222,6 @@ Ref: "life_groups"."id" <? "life_group_events"."life_group_id"
 
 Ref: "users"."id" -? "profiles"."user_id"
 
-Ref: "lessons_dates"."id" -? "lessons_dates_link"."lesson_date_id"
+Ref: "lessons_events"."id" -? "lessons_events_link"."lesson_date_id"
+
+Ref: "events"."id" <? "lessons_events"."event_id"
