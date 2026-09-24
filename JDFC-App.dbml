@@ -48,6 +48,11 @@ Table devotion_lessons {
   title text [not null]
   date date [not null]
   lesson_id integer [not null]
+
+  indexes {
+    (odb_link) [unique]
+    (date) [unique]
+  }
 }
 
 // Ex. sermonType, DT, LC
@@ -142,6 +147,7 @@ Table life_group_events_members {
 
 Table events {
   id integer [primary key]
+  title text
   datetime datetime [not null]
   location text [not null]
   repeat_every_days integer [not null]
