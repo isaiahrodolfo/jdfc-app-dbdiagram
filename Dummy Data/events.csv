@@ -1,0 +1,9 @@
+id,creator_id,datetime,location,repeat_every_days,note
+1,1,2026-09-25 19:00:00,Church Fellowship Hall,7,Weekly life group meeting
+2,3,2026-09-26 18:30:00,Community Center,7,Bring your Bible and notebook
+3,5,2026-09-27 17:00:00,David's House,14,Potluck dinner
+4,7,2026-10-02 19:00:00,Church Fellowship Hall,7,Weekly Bible study
+5,9,2026-10-03 18:00:00,Daniel's House,7,Small group discussion
+6,1,2026-10-09 19:00:00,Church Fellowship Hall,7,Weekly life group meeting
+7,3,2026-10-10 18:30:00,Community Center,7,Prayer and fellowship
+8,5,2026-10-11 17:00:00,David's House,14,Potluck dinner
