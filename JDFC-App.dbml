@@ -84,11 +84,8 @@ Table lessons_dates_completion {
 
 Table life_group_events {
   id integer [primary key]
-  creator integer [not null]
-  datetime datetime [not null]
-  location text [not null]
-  repeat_every_days integer [not null]
-  note text
+  life_group_id integer [not null]
+  event_id integer [not null]
 }
 
 Table life_group {
@@ -122,6 +119,15 @@ Table life_group_events_members {
   indexes {
     (user_id, life_group_event_id) [unique]
   }
+}
+
+Table events {
+  id integer [primary key]
+  creator_id integer [not null]
+  datetime datetime [not null]
+  location text [not null]
+  repeat_every_days integer [not null]
+  note text
 }
 
 Table event_availabilities {
@@ -163,7 +169,7 @@ Ref: "lessons"."id" <? "lessons_tags"."lesson_id"
 
 Ref: "lessons"."id" <? "devotion_lessons"."lesson_id"
 
-Ref: "users"."id" <? "life_group_events"."creator"
+Ref: "users"."id" <? "events"."creator_id"
 
 Ref: "users"."id" <? "life_group_members"."user_id"
 
@@ -176,3 +182,7 @@ Ref: "life_group_roles"."id" <? "life_group_members"."life_group_role_id"
 Ref: "life_group_events"."id" <? "life_group_events_members"."life_group_event_id"
 
 Ref: "event_availabilities"."id" <? "life_group_events_members"."event_availability_id"
+
+Ref: "events"."id" <? "life_group_events"."event_id"
+
+Ref: "life_group"."id" <? "life_group_events"."life_group_id"

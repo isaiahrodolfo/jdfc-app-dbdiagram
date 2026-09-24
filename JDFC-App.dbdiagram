@@ -114,6 +114,12 @@
         "schemaName": "public",
         "x": 1525.3075265186133,
         "y": 606.6320665551672
+      },
+      {
+        "name": "events",
+        "schemaName": "public",
+        "x": -579.3695480115035,
+        "y": 1644.0138519977934
       }
     ],
     "tableGroupCollapseStates": [],
@@ -436,6 +442,51 @@
           "event_availability_id"
         ],
         "secondTableName": "life_group_events_members",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "users",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "creator_id"
+        ],
+        "secondTableName": "events",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "events",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "event_id"
+        ],
+        "secondTableName": "life_group_events",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "life_group",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "life_group_id"
+        ],
+        "secondTableName": "life_group_events",
         "secondSchemaName": "public",
         "secondRelation": "0..*",
         "checkPoints": []
