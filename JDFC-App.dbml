@@ -98,7 +98,7 @@ Table life_group_events {
   event_id integer [not null]
 }
 
-Table life_group {
+Table life_groups {
   id integer [primary key]
   name text
 }
