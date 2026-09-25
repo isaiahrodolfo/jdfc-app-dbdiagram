@@ -128,10 +128,10 @@
         "y": 1284.7082582546213
       },
       {
-        "name": "lessons_completion",
+        "name": "user_lessons_completion",
         "schemaName": "public",
-        "x": -2.0500000000000114,
-        "y": 1611.8553714266666
+        "x": -14.6240234375,
+        "y": -153.14617834799355
       }
     ],
     "tableGroupCollapseStates": [],
@@ -557,21 +557,6 @@
         "firstFieldNames": [
           "id"
         ],
-        "firstTableName": "lessons",
-        "firstSchemaName": "public",
-        "firstRelation": "1",
-        "secondFieldNames": [
-          "lesson_id"
-        ],
-        "secondTableName": "lessons_completion",
-        "secondSchemaName": "public",
-        "secondRelation": "0..1",
-        "checkPoints": []
-      },
-      {
-        "firstFieldNames": [
-          "id"
-        ],
         "firstTableName": "tracks",
         "firstSchemaName": "public",
         "firstRelation": "1",
@@ -591,6 +576,36 @@
             "y": 849.0427600772869
           }
         ]
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "lessons",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "lesson_id"
+        ],
+        "secondTableName": "user_lessons_completion",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "users",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "user_id"
+        ],
+        "secondTableName": "user_lessons_completion",
+        "secondSchemaName": "public",
+        "secondRelation": "0..*",
+        "checkPoints": []
       }
     ]
   },

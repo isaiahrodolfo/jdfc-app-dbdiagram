@@ -85,10 +85,15 @@ Table lessons_events_slides {
   slides_link text [not null]
 }
 
-Table lessons_completion {
+Table user_lessons_completion {
   id integer [primary key]
-  lesson_id integer [not null, unique]
+  user_id integer [not null]
+  lesson_id integer [not null]
   is_completed boolean [not null]
+
+  indexes {
+    (user_id, lesson_id) [unique]
+  }
 }
 
 Table lessons_events_link {
@@ -194,8 +199,6 @@ Ref: "users"."id" <? "lessons_events_speakers"."speaker_id"
 
 Ref: "lessons_events"."id" <? "lessons_events_slides"."lessons_events_id"
 
-Ref: "lessons"."id" -? "lessons_completion"."lesson_id"
-
 Ref: "lessons"."id" <? "church_lessons"."lesson_id"
 
 Ref: "series"."id" <? "church_lessons"."module_id"
@@ -227,3 +230,7 @@ Ref: "lessons_events"."id" -? "lessons_events_link"."lessons_events_id"
 Ref: "events"."id" <? "lessons_events"."event_id"
 
 Ref: "tracks"."id" <? "profiles"."track_enrolled"
+
+Ref: "lessons"."id" <? "user_lessons_completion"."lesson_id"
+
+Ref: "users"."id" <? "user_lessons_completion"."user_id"
