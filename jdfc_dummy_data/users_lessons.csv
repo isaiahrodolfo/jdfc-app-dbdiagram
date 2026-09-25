@@ -1,0 +1,11 @@
+id,notes,tags,user_id,lesson_id
+1,Salvation is a gift from God.,"{salvation,gift}",1,1
+2,Remember to pray consistently.,"{prayer,daily}",1,2
+3,Think about the foundation of my faith.,{foundation},1,3
+4,My biggest takeaway was learning from mistakes.,{growth},3,4
+5,Trust God even when the outcome is unclear.,{trust},2,5
+6,My purpose should serve others.,"{purpose,service}",4,6
+7,Build a consistent devotional routine.,{discipline},5,7
+8,Look for opportunities to serve.,{service},6,8
+9,Leadership requires responsibility.,{leadership},7,9
+10,Unity strengthens the church.,{unity},8,12

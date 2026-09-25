@@ -1,0 +1,13 @@
+id,title,datetime,location,repeat_every_days,announcement_end,information
+1,Sunday Service,2026-09-20 10:00:00,JDFC Main Hall,7,2026-09-20 12:00:00,Weekly Sunday worship service
+2,Prayer Service,2026-09-24 19:00:00,JDFC Main Hall,7,2026-09-24 21:00:00,Weekly prayer service
+3,Sunday Service,2026-09-27 10:00:00,JDFC Main Hall,7,2026-09-27 12:00:00,Weekly Sunday worship service
+4,Prayer Service,2026-10-01 19:00:00,JDFC Main Hall,7,2026-10-01 21:00:00,Weekly prayer service
+5,Community Outreach,2026-09-26 14:00:00,Tacoma Community Center,14,2026-09-26 18:00:00,Community outreach event
+6,Life Group Dinner,2026-09-25 19:00:00,John's House,7,2026-09-25 21:00:00,Bring a dish to share
+7,Destiny Training,2026-09-27 14:00:00,JDFC Classroom 2,7,2026-09-27 16:00:00,Destiny Training class
+8,Life Group Picnic,2026-10-03 12:00:00,Point Defiance Park,14,2026-10-03 16:00:00,Bring lunch and outdoor games
+9,Old Prayer Service,2026-09-17 19:00:00,JDFC Main Hall,7,2026-09-17 21:00:00,Previous prayer service
+10,Old Sunday Service,2026-09-13 10:00:00,JDFC Main Hall,7,2026-09-13 12:00:00,Previous Sunday worship service
+11,Kingdom Living,2026-10-04 10:00:00,JDFC Main Hall,7,2026-10-04 12:00:00,Sunday sermon lesson event
+12,Prayer and Spiritual Growth,2026-10-08 19:00:00,JDFC Main Hall,7,2026-10-08 21:00:00,Prayer lesson event

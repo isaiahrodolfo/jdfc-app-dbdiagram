@@ -94,8 +94,8 @@
       {
         "name": "life_groups",
         "schemaName": "public",
-        "x": 1488.8178196456295,
-        "y": 738.1411241350877
+        "x": 1490.2562882519019,
+        "y": 741.0180613476325
       },
       {
         "name": "announcements",
@@ -118,8 +118,8 @@
       {
         "name": "lessons_events_slides",
         "schemaName": "public",
-        "x": -528.9187605683414,
-        "y": 1458.3339175656038
+        "x": -531.7956977808858,
+        "y": 1498.6110385412253
       },
       {
         "name": "lessons_events_link",

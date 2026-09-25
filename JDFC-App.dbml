@@ -3,8 +3,8 @@
 
 Table users {
   id integer [primary key]
-  email email [not null]
-  phone phone
+  email text [not null]
+  phone text
 }
 
 Table profiles {
@@ -23,6 +23,10 @@ Table users_lessons {
   tags text[]
   user_id integer [not null]
   lesson_id integer [not null]
+
+  indexes {
+    (user_id, lesson_id) [unique]
+  }
 }
 
 Ref users_lessons: users_lessons.user_id ?> users.id // many-to-one
@@ -99,8 +103,9 @@ Table user_lessons_completion {
 
 Table lessons_events_link {
   id integer [primary key]
-  lessons_events_id integer [not null, unique]
+  livestream_link text
   is_live boolean [not null]
+  lessons_events_id integer [not null, unique]
 }
 
 Table life_group_events {
@@ -177,6 +182,8 @@ Records series(id, name, heading, track_id) {
   1, 'Consolidation', null, 3
   2, 'Learning From Our Mistakes', 'Week 1', 4
   11, 'DT Example Title', 'Module 1', 5
+  68, 'Sunday Service Sermon Series', null, 1
+  124, 'Prayer Service Sermon Series', null, 2
 }
 
 Records life_group_roles(id, name) {
