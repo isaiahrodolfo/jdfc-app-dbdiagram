@@ -41,7 +41,7 @@ Table church_lessons {
   lesson_id integer [not null]
 
   indexes {
-    (module_id, lesson_number) [unique]
+    (module_id, sequence_number) [unique]
   }
 }
 
