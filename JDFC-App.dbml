@@ -37,7 +37,7 @@ Table lessons {
 Table church_lessons {
   id integer [primary key]
   module_id integer [not null]
-  lesson_number integer [not null]
+  sequence_number integer [not null]
   lesson_id integer [not null]
 
   indexes {
@@ -63,7 +63,8 @@ Table tracks {
 Table series {
   id integer [primary key]
   name text
-  heading text [note: 'Week # or Module #']
+  heading text [note: 'Week or Module']
+  sequence_number integer [note: '# in Week # or Module #']
   track_id integer [not null]
 }
 
