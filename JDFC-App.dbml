@@ -14,11 +14,13 @@ Table profiles {
   avatar_url text
   facebook_url text
   instagram_url text
+  track_enrolled integer [not null, default: 3]
 }
 
 Table users_lessons {
   id integer [primary key]
   notes text [note: 'User\'s notes for the lesson']
+  tags text[]
   user_id integer [not null]
   lesson_id integer [not null]
 }
@@ -142,7 +144,7 @@ Table events {
   location text [not null]
   repeat_every_days integer [not null]
   announcement_end datetime
-  note text
+  information text
 }
 
 Table event_availabilities {
@@ -223,3 +225,5 @@ Ref: "users"."id" -? "profiles"."user_id"
 Ref: "lessons_events"."id" -? "lessons_events_link"."lessons_events_id"
 
 Ref: "events"."id" <? "lessons_events"."event_id"
+
+Ref: "tracks"."id" <? "profiles"."track_enrolled"
