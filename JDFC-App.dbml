@@ -70,6 +70,10 @@ Table series {
   heading text [note: 'Week or Module']
   sequence_number integer [note: '# in Week # or Module #']
   track_id integer [not null]
+
+  indexes {
+    (sequence_number, track_id) [unique]
+  }
 }
 
 Table lessons_events {
